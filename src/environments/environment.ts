@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // eslint-disable-next-line max-len
+  token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMjI0MTQ4MzIxODY0OTA4ODAyIiwibGltaXQiOjEwMCwia2V5IjoiOFphd1d0MU1QckQ1emJJTlBnaUFWa3BEaUVFdHJuRHVIOVc3WHhvbXhQR25yb2xGdGsiLCJjcmVhdGVkX2F0IjoiMjAyMS0xMS0yMlQxNDowMTo1MSswMDowMCIsImlhdCI6MTYzNzU4OTcxMX0.6UFiDrPPmpgQcFeBbwUFpxKr0F_ivevuRvhagaifrm4',
 };
 
 /*
