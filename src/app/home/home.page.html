@@ -1,20 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Blague
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="ion-text-center" *ngIf="!content">
+    <br>
+    <ion-spinner></ion-spinner>
   </div>
+
+  <ion-card *ngIf="content">
+    <ion-card-header>
+      <ion-card-title>{{blague?.joke}}</ion-card-title>
+      <ion-card-title>{{blague?.answer}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+  <ion-footer class="bottom">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button id="changeText" (click)="refresh()">
+          <ion-icon slot="start" name="refresh"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title slot="end">
+        Actualiser
+      </ion-title>
+    </ion-toolbar>
+  </ion-footer>
 </ion-content>

@@ -9,6 +9,7 @@ import { Blague } from './blague';
 })
 export class BlagueApiService implements HttpInterceptor {
   token = environment.token;
+  url: string[];
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,6 @@ export class BlagueApiService implements HttpInterceptor {
   }
 
   getBlagueLimite(): any {
-    return this.http.get('https://www.blagues-api.fr/api/random');
+    return this.http.get('https://www.blagues-api.fr/api//type/dark/random');
   }
 }
